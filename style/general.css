@@ -1,13 +1,21 @@
+:root{
+  --primary-color: black;
+  --secondary-color: grey;
+  --hover-color: rgb(234, 234, 234);
+  --background-color:  rgb(243, 243, 243);
+  --border-color: rgb(204, 204, 204);
+}
+
 *{
   font-family: Roboto, Arial;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body{
   padding-top: 112px;
   padding-left: 200px;
-  background-color:  rgb(249, 249, 249);
 }
 
 @media screen and (max-width: 1024px) {

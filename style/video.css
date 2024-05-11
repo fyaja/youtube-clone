@@ -39,7 +39,7 @@
 
 .video-channel, .video-views{
   font-size: 14px;
-  color: grey;
+  color: var(--secondary-color);
 }
 
 .video-channel{
