@@ -11,30 +11,51 @@ header{
 }
 
 /* filter */
-.filter{
+.filter-container{
   position: fixed;
   left: 200px;
   top: 57px;
   right: 0;
   height: 55px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-left: 20px;
+  margin-left: 20px;
   background-color: white;
+}
+
+.filter{
+  height: 100%;
+  display: flex;
+  padding: 10px 0;
+  white-space: nowrap;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.filter::-webkit-scrollbar{
+  display: none;
 }
 
 .filter-btn{
   border: none;
-  padding: 6px 10px;
+  padding: 0 20px;
   border-radius: 8px;
+  margin-right: 12px;
   background-color: var(--background-color);
   font-weight: 500;
   font-size: 14px;
   cursor: pointer;
 }
 
-.filter-btn:active{
+.filter-btn:last-child{
+  margin-right: 50px;
+}
+
+.active{
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.active:hover{
   background-color: var(--primary-color);
   color: var(--background-color);
 }
@@ -212,12 +233,8 @@ button:hover{
 }
 
 @media screen and (max-width: 1024px) {
-  .filter{
+  .filter-container{
     left: 72px;
-  }
-
-  .filter-btn:nth-child(n+8) {
-    display: none;
   }
 
   .abt-sidebar{
@@ -254,17 +271,8 @@ button:hover{
   }
 }
 
-@media screen and (max-width: 768px) {
-  .filter-btn:nth-child(n+6) {
-    display: none;
-  }
-}
 
 @media screen and (max-width: 568px) {
-  .filter-btn:nth-child(n+5) {
-    display: none;
-  }
-
   .middle-section{
     justify-content: flex-end;
     margin-left: 0px;
@@ -297,7 +305,18 @@ button:hover{
     display: none;
   }
 
-  .filter{
+  .filter-container{
     left: 0;
+  }
+}
+
+@media screen and (max-width: 425px){
+  .right-section{
+    margin-left: 10px;
+    width: auto;
+  }
+
+  .voice-search, .notification, .upload{
+    display: none;
   }
 }
